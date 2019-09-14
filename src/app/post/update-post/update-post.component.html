@@ -1,0 +1,23 @@
+<div>
+    <mat-card class="matcard">
+      <h5 style="color: grey">Create Post</h5>
+      <form [formGroup]="form">
+        <mat-form-field style="width: 100%;margin-top: 10px;">
+          <input style="width: 100%;" matInput placeholder="add a title..." name="title" autocomplete="off"
+            formControlName="title" #title>
+          <mat-error *ngIf="form.get('body').invalid">please enter title.</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%;margin-top: 10px;">
+          <textarea style="width: 100%;" matInput placeholder="add body..." name="body" autocomplete="off"
+            formControlName="body" #body></textarea>
+          <mat-error *ngIf="form.get('body').invalid">please add body.</mat-error>
+        </mat-form-field>
+        <br>
+        <button style="font-size: 11px;margin-top: 0px;height: 35px;text-align: center;vertical-align: sub;"
+          mat-raised-button color="primary" routerLink="/">Back</button>
+
+        <button style="margin-left:10px; font-size: 11px;margin-top: 0px;height: 35px;text-align: center;vertical-align: sub;"
+        mat-raised-button color="accent" (click)="updatePost(title.value, body.value)">Update Post</button>
+      </form>
+    </mat-card>
+  </div>

@@ -1,0 +1,52 @@
+<div>
+  <div>
+    <mat-card class="matcard">
+      <h5 style="color: grey">Create Post</h5>
+      <form [formGroup]="form">
+        <mat-form-field style="width: 100%;margin-top: 10px;">
+          <input style="width: 100%;" matInput placeholder="add a title..." name="title" autocomplete="off"
+            formControlName="title" #title>
+          <mat-error *ngIf="form.get('body').invalid">please enter title.</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%;margin-top: 10px;">
+          <textarea style="width: 100%;" matInput placeholder="add body..." name="body" autocomplete="off"
+            formControlName="body" #body></textarea>
+          <mat-error *ngIf="form.get('body').invalid">please add body.</mat-error>
+        </mat-form-field>
+        <br>
+        <button style="font-size: 11px;margin-top: 0px;height: 35px;text-align: center;vertical-align: sub;"
+          mat-raised-button color="accent" (click)="createPost(title.value, body.value)">Create Post</button>
+      </form>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card class="matcard" *ngIf="posts.length > 0 " style="margin-top:10px;margin-bottom: 50px;">
+      <h5 style="color: grey">Post List</h5>
+      <h6 id="totalPosts" style="color: grey">Total Posts<span style="position: absolute;" matBadge="{{posts.length}}"
+          matBadgeOverlap="false"></span></h6>
+      <mat-accordion class="example-headers-align" *ngFor="let post of posts">
+        <mat-expansion-panel hideToggle style="width: 100%;margin-top: 20px;color: grey;">
+          <mat-expansion-panel-header id="headerpanel">
+            <mat-panel-title style="color: grey;">
+              <mat-label class="applyfields">Title: {{post.title}}
+              </mat-label>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <mat-label class="applyfields">Body: {{post.body}}
+            </mat-label>
+          </mat-panel-description>
+          <mat-action-row>
+            <button mat-button color="primary" [queryParams]="{ id: post.id}"
+              [routerLink]="['/edit', post.id]">Edit</button>
+            <button mat-button color="warn" (click)="deletePost(post.id)">Delete</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+    <div style="text-align: center; color:grey; margin-top:20px" *ngIf="posts.length < 1 ">
+      <p>Post list is empty...</p>
+    </div>
+  </div>
+</div>

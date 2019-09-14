@@ -1,0 +1,9 @@
+.matcard{
+    padding: 20px;
+    margin-top: 10px;
+    background: #f5f5f5;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+    background: aliceblue;
+}
