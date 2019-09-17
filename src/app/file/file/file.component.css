@@ -1,0 +1,40 @@
+.mat-card {
+    text-align: center;
+    padding: 50px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 50px;
+}
+
+input[type="file"]{
+    visibility: hidden;
+  }
+
+  
+.file-image{
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.file-image img{
+  height: 100%;
+}
+
+#imageUploaded{
+  font-size: 13px;
+  color: green;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+  
+  #videoUploading{
+    font-size: 13px;
+    color: grey;
+    margin-bottom: 0px;
+  }
+  
+  #videoUploaded{
+    font-size: 13px;
+    color: green;
+    margin-bottom: 0px;
+  }

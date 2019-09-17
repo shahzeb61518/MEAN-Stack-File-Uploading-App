@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { CreatePostComponent } from './post/create-post/create-post.component';
-import { UpdatePostComponent } from './post/update-post/update-post.component';
+import { FileComponent } from './file/file/file.component';
+import { FileListComponent } from './file/file-list/file-list.component';
 
 const routes: Routes = [
-  { path: '', component: CreatePostComponent },
-  { path: 'edit/:id', component: UpdatePostComponent },
+  { path: '', component: FileComponent },
+  { path: 'list', component: FileListComponent }
 ];
 
 @NgModule({

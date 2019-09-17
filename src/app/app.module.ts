@@ -3,30 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CreatePostComponent } from './post/create-post/create-post.component';
-import { UpdatePostComponent } from './post/update-post/update-post.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FileComponent } from './file/file/file.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatVideoModule } from 'mat-video';
 
 import {
     MatInputModule,
     MatCardModule,
     MatButtonModule,
     MatBadgeModule,
-
-} from '@angular/material'
+} from '@angular/material';
+import { FileListComponent } from './file/file-list/file-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatePostComponent,
-    UpdatePostComponent,
-    HeaderComponent
+    HeaderComponent,
+    FileComponent,
+    FileListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,10 @@ import {
     MatCardModule,
     MatButtonModule,
     MatExpansionModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule,
+    MatProgressBarModule,
+    MatVideoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

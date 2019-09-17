@@ -1,0 +1,22 @@
+.videoMat{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    background: aliceblue;
+}
+
+.imageMat{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    background: antiquewhite;
+}
+
+.img-thumbnail {
+    padding: 0.1rem;
+    background-color: #bdbdbd;
+    border: 1px solid #ffffff;
+    border-radius: .25rem;
+    width: 100%;
+    height: auto;
+}

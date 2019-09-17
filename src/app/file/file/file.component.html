@@ -1,0 +1,34 @@
+<mat-card>
+  <h4 style="color: grey;">File Uploading</h4>
+  <form [formGroup]="form" (submit)="onSubmitFile()" >
+    <div style="margin-top: 40px;">
+      <mat-form-field style="width: 50%;">
+        <mat-label>Select a File</mat-label>
+        <mat-select disableRipple>
+          <mat-option value="1" (click)="filePicker.click()">Pick Image</mat-option>
+          <mat-option value="2" (click)="videoFilePicker.click()">Pick Video</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- video uploading -->
+      <button style="margin-left: 30px" mat-raised-button color="accent" type="submit">Upload</button>
+      <div class='form-group'>
+        <input accept="video/mp4" type="file" #videoFilePicker (change)="onVideoPicked($event)">
+        <div *ngIf="videoSize != null">
+          <p id="videoUploading">Wait while video is ready to upload...</p>
+          <mat-progress-bar mode="buffer"></mat-progress-bar>
+        </div>
+      </div>
+      <div class="video" *ngIf="videoPreview && form.get('video').valid">
+        <p id="videoUploaded">Video uploaded successfully!</p>
+      </div>
+      <!-- image uploading -->
+
+      <input type="file" #filePicker (change)="onImagePicked($event)">
+    </div>
+    <div class="file-image" *ngIf="imagePreview && form.get('image').valid">
+      <img [src]="imagePreview" alt="image">
+      <p id="imageUploaded">Image is ready to upload!</p>
+    </div>
+  </form>
+</mat-card>

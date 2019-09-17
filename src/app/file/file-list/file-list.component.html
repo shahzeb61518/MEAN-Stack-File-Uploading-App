@@ -1,0 +1,22 @@
+<mat-card *ngIf="files.length > 0" style="
+margin-top: 15px;
+margin-bottom: 20px;">
+  <div *ngFor="let file of files">
+    <mat-card class="videoMat" *ngIf="file.videoPath != null">
+      <p style="margin-top: 10px;color: grey;float: left">Video File</p>
+      <button style="margin-left: 78%;" mat-button color="warn" (click)="onDelete(file.id)">Delete</button>
+      <div>
+        <mat-video [src]="file.videoPath"></mat-video>
+      </div>
+    </mat-card>
+
+    <mat-card class="imageMat" *ngIf="file.imagePath != null">
+      <p style="margin-top: 10px;color: grey; float:left">Image File</p>
+      <button style="margin-left: 78%;" mat-button color="warn" (click)="onDelete(file.id)">Delete</button>
+      <div>
+        <img class="img-thumbnail" [src]="file.imagePath" alt="image-file">
+      </div>
+    </mat-card>
+  </div>
+  <p  style="text-align: center; color: grey">No file uploaded yet</p>
+</mat-card>
