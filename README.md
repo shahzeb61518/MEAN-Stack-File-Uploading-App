@@ -1,10 +1,24 @@
-# MeanstackCrudOperation
+# MEAN-Stack-CRUD-Operations
+
+## Frontend
+
+Angular7, Html, css, angular material.
+
+## Backend
+
+Nodejs, Express and MongoDb as Database.
+
+Create, Read, Update and Delete these operations are performed in this app with very easy and simple way.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Development server
+
+Run `nodemon server` to run the backend files.
 
 ## Code scaffolding
 
